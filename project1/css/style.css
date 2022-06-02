@@ -1,6 +1,7 @@
 :root {
   --typeLyrics: "Lato", sans-serif;
   --backgroundBox: #672732;
+  --effect: 
   --phrase: #fbd8d0;
   --title: #ffff;
 }
@@ -61,8 +62,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem 0;
   width: 8rem;
 }
+
+.box:hover{
+    animation-name: boxBorder;
+    animation-timing-function: ease-in-out;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+.box__effect{
+  animation-name: boxBorder;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+@keyframes boxBorder {
+    100%{
+        border: 2px solid white;
+        transform: scale(1.1);
+    }
+}
+
+
 
 .box__title,
 .box__phrase {
@@ -72,11 +101,11 @@ body {
 
 .box__title {
   color: var(--title);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 3rem;
 }
 
 .box__phrase {
   font-size: 1.2rem;
-  font-weight: 100;
+  font-weight: 300;
 }
