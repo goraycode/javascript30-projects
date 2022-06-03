@@ -5,8 +5,11 @@ function keyboard(e) {
     const box = document.querySelector(`.box[data-key="${e.keyCode}"]`);
     if (!audio) return;
 
+    audio.currentTime = 0; //rewind to the start
+    audio.play();
 
-    console.log(audio.play());
     box.classList.add('box__effect');
-
+    setTimeout(() => {
+        box.classList.remove('box__effect');
+    }, 1000);
 }
