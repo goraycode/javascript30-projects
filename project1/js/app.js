@@ -12,7 +12,6 @@ function clickBox() {
 
     boxes.forEach(box => {
         box.addEventListener('click', (e) => {
-            console.log(e.target.attributes[0].value);
             const valueSound = e.target.attributes[0].value
             const audio = document.querySelector(`audio[data-key="${valueSound}"]`);
             playSoundandEffect(audio, box);
