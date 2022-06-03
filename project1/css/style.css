@@ -66,18 +66,10 @@ body {
   width: 8rem;
 }
 
-.box:hover{
-    animation-name: boxBorder;
-    animation-timing-function: ease-in-out;
-    animation-duration: 250ms;
-    animation-fill-mode: forwards;
-    animation-direction: alternate;
-}
-
 .box__effect{
   animation-name: boxBorder;
   animation-timing-function: ease-in-out;
-  animation-duration: 2s;
+  animation-duration: 250ms;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-direction: alternate;
