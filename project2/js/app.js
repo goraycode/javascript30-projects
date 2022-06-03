@@ -19,6 +19,23 @@ function setDate() {
 }
 
 
+function digitalClock() {
+    const dHour = document.querySelector('.dHour');
+    const dMinute = document.querySelector('.dMinute');
+    const dSecond = document.querySelector('.dSecond');
+
+    const now = new Date();
+    const second = now.getSeconds();
+    const minute = now.getMinutes();
+    const hour = now.getHours();
+
+    dHour.textContent = hour;
+    dMinute.textContent = minute;
+    dSecond.textContent = second;
+}
+
+
 setInterval(() => {
     setDate();
+    digitalClock();
 }, 1000);

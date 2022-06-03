@@ -35,16 +35,12 @@ body {
   align-items: center;
 }
 
-h2 {
-  color: white;
-}
-
 .clock {
   display: block;
   width: 200px;
   height: 200px;
   margin: 0 auto;
-  border: 6px solid #ff4040;
+  border: 6px solid azure;
   border-radius: 100%;
   position: relative;
 }
@@ -95,4 +91,23 @@ h2 {
   transform: translate(-50%, 0);
   transform-origin: bottom;
   animation: timeIcon 12s cubic-bezier(0.95, -1.5, 0.285, 1.85) infinite;
+}
+
+.digitalClock {
+  color: azure;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dHour {
+  color: #16ce28;
+}
+.dMinute {
+  color: #e9e941;
+}
+.dSecond {
+  color: #d5211b;
 }
