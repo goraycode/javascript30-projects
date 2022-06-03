@@ -1,28 +1,98 @@
 :root {
-    --typeLyrics: "Lato", sans-serif;
-    --backgroundBox: #672732;
-    --effect: 
-    --phrase: #fbd8d0;
-    --title: #ffff;
+  --typeLyrics: "Lato", sans-serif;
+  --backgroundBox: #672732;
+  --title: #ffff;
 }
-  
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-  
+
 html {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
-  
+
 .container {
- max-width: 1200px;
- width: 90%;
- margin: 0 auto;
- display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  
+
+body {
+  font-family: var(--typeLyrics);
+  background-color: #000000;
+  height: 100vh;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: white;
+}
+
+.clock {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border: 6px solid #ff4040;
+  border-radius: 100%;
+  position: relative;
+}
+.clock:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #ff4040;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.clock__second {
+  content: "";
+  width: 6px;
+  height: 75px;
+  background-color: #d5211b;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform-origin: bottom;
+  animation: timeIcon 12s cubic-bezier(0.95, -1.5, 0.285, 1.85) infinite;
+}
+
+.clock__minute {
+  content: "";
+  width: 6px;
+  height: 75px;
+  background-color: #e9e941;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform-origin: bottom;
+  animation: timeIcon 12s cubic-bezier(0.95, -1.5, 0.285, 1.85) infinite;
+}
+.clock__hour {
+  content: "";
+  width: 6px;
+  height: 75px;
+  background-color: #16ce28;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform-origin: bottom;
+  animation: timeIcon 12s cubic-bezier(0.95, -1.5, 0.285, 1.85) infinite;
+}
