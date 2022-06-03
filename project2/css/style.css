@@ -58,7 +58,7 @@ body {
 .clock__second {
   content: "";
   width: 6px;
-  height: 75px;
+  height: 80px;
   background-color: #d5211b;
   position: absolute;
   top: 20px;
@@ -83,7 +83,7 @@ body {
 .clock__hour {
   content: "";
   width: 6px;
-  height: 75px;
+  height: 70px;
   background-color: #16ce28;
   position: absolute;
   top: 20px;
