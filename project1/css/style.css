@@ -43,14 +43,12 @@ body {
 .options {
   margin: 5rem 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 @media (min-width: 768px) {
   .options {
     margin: 0;
-    display: flex;
-    flex-direction: row;
   }
 }
 
