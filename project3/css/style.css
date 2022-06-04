@@ -1,6 +1,6 @@
 :root {
   --typeLyrics: "Lato", sans-serif;
-  --blur: 0.2rem;
+  --blur: 5px;
   --color: rgb(216, 209, 23);
   --border: 5px;
 }
