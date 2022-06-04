@@ -1,7 +1,8 @@
 :root {
   --typeLyrics: "Lato", sans-serif;
-  --blur: 0.1rem;
+  --blur: 0.2rem;
   --color: rgb(216, 209, 23);
+  --border: 5px;
 }
 
 *,
@@ -49,7 +50,10 @@ img {
 
 .img {
   margin: 1rem;
-  border: 1px solid var(--color);
+  border: var(--border) solid var(--color);
+}
+
+.img img {
   filter: blur(var(--blur));
 }
 
