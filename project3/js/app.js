@@ -3,7 +3,6 @@ const beach = document.querySelector('.beach');
 const titleJS = document.querySelector('.title__lyrics');
 
 
-eventListeners();
 function eventListeners() {
 
     const spacing = document.querySelector('#spacing');
@@ -22,3 +21,4 @@ function eventListeners() {
         titleJS.style.color = `${color.value}`;
     })
 }
+eventListeners();
