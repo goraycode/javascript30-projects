@@ -1,7 +1,7 @@
 :root {
   --typeLyrics: "Lato", sans-serif;
-  --backgroundBox: #672732;
-  --title: #ffff;
+  --blur: 0.1rem;
+  --color: rgb(216, 209, 23);
 }
 
 *,
@@ -26,10 +26,42 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  background-color: black;
+  color: white;
   height: 100vh;
   width: 99%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 50rem;
+  object-fit: cover;
+}
+
+.title__lyrics {
+  color: var(--color);
+}
+
+.img {
+  margin: 1rem;
+  border: 1px solid var(--color);
+  filter: blur(var(--blur));
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.field {
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
