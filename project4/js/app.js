@@ -17,4 +17,9 @@ console.table(fifteen);
 const inventory = inventors.map(inventor => `${inventor.first}, ${inventor.last}`);
 console.table(inventory);
 
+//sort
+//3. Sort the inventors by birthdate, oldest to youngest
+const birthdates = inventors.sort((a, b) => a.year - b.year);
+console.table(birthdates);
+
 
