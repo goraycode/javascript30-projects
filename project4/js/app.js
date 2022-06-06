@@ -53,3 +53,17 @@ const Boulevards_in_Paris = ['Boulevard Auguste-Blanqui', 'Boulevard Barbès', '
 const listBoulevards = Boulevards_in_Paris.filter(boulevard => boulevard.includes('de'));
 console.table(listBoulevards);
 
+
+//7. Sort the people alphabetically by last name
+
+const lastNames = ['Alex Bermejo', 'Cesar Zubieta', 'Gerson Aguedo', 'Bruno Díaz'];
+const orderLastNames = lastNames.sort(function (lastOne, nextOne) {
+    const [aname, alastname] = lastOne.split(' ');
+    const [bname, blastname] = nextOne.split(' ');
+
+    return alastname > blastname ? -1 : 1;
+
+});
+
+console.table(orderLastNames);
+
