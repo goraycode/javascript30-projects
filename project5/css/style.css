@@ -1,8 +1,5 @@
 :root {
   --typeLyrics: "Lato", sans-serif;
-  --blur: 5px;
-  --color: rgb(216, 209, 23);
-  --border: 5px;
 }
 
 *,
@@ -38,16 +35,18 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5rem;
-  border: 1px solid black;
   height: 13rem;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transition: flex-basis 1s ease-in-out;
 }
 
 @media (min-width: 765px) {
   .panel {
+    width: initial;
+    flex: 1 0 0;
     height: 100vh;
   }
 }
@@ -69,4 +68,15 @@ body {
 
 .panel:nth-child(5) {
   background-image: url("../img/cloud.jpg");
+}
+
+.panel__effect {
+  flex-basis: 20%;
+}
+
+.panel p {
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
 }
