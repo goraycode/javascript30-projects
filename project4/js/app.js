@@ -1,7 +1,7 @@
 const inventors = [
-    { 'first': 'Albert', 'last': 'Einstein', 'year': 1580, 'passed': 1620 },
+    { 'first': 'Albert', 'last': 'Einstein', 'year': 1580, 'passed': 1650 },
     { 'first': 'Galileo', 'last': 'Galilei', 'year': 1350, 'passed': 1400 },
-    { 'first': 'Isaac', 'last': 'Newton', 'year': 1560, 'passed': 1600 }
+    { 'first': 'Isaac', 'last': 'Newton', 'year': 1560, 'passed': 1580 }
 ]
 
 console.table(inventors);
@@ -27,3 +27,13 @@ console.table(birthdates);
 //4. How many years did all the inventors live
 const liveInventors = inventors.reduce((acc, cur) => acc + (cur.passed - cur.year), 0);
 console.log(liveInventors);
+
+
+//5. sort the inventors by year lived
+const livedInventors = inventors.sort((a, b) => {
+    const lastGuy = a.passed - a.year;
+    const nextGuy = b.passed - b.year;
+
+    return lastGuy > nextGuy ? -1 : 1;
+});
+console.table(livedInventors);
