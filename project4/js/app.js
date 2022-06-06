@@ -67,3 +67,35 @@ const orderLastNames = lastNames.sort(function (lastOne, nextOne) {
 
 console.table(orderLastNames);
 
+//Reduce exercise
+//8. Sum up the instances of each of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+const sumUp = data.reduce((obj, item) => {
+
+    if (!obj[item]) {
+        obj[item] = 0;
+    }
+
+    obj[item]++;
+    return obj;
+
+}, {});
+
+console.log(sumUp);
+
+
+const tax = [12, 4, 12, 6, 4];
+const upTax = tax.reduce((acc, cur) => {
+
+    if (!acc[cur]) {
+        acc[cur] = 0;
+    }
+
+    acc[cur]++;
+    return acc;
+
+}, {});
+
+console.log(upTax);
+
+
