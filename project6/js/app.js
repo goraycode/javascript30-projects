@@ -7,6 +7,9 @@ function eventListener() {
 
 function searchFood(e) {
     const foodSearch = e.target.value;
+    if (foodSearch === '') {
+        cleanHTML();
+    }
 
     //fetch here
     const url = 'db.json';
