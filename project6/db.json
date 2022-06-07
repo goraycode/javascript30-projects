@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Ceviche",
+    "price": 18
+  },
+  {
+    "id": 2,
+    "name": "Lomo saltado",
+    "price": 15
+  },
+  {
+    "id": 3,
+    "name": "Pachamanca",
+    "price": 12
+  }
+]
