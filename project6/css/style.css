@@ -14,4 +14,53 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  background-color: chocolate;
+}
+
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.field,
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+}
+input:focus {
+  outline: none;
+}
+
+.card {
+  border: 1px solid white /*  */;
+  padding: 0.5rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__title,
+.card__words {
+  padding: 0;
+  margin: 0;
+}
+
+.card__title {
+  font-weight: 700;
+}
+
+.card__words {
+  font-weight: 300;
 }
