@@ -58,7 +58,7 @@ input:focus {
 }
 
 .card__title,
-.card__words {
+.card__price {
   padding: 0;
   margin: 0;
 }
@@ -67,6 +67,6 @@ input:focus {
   font-weight: 700;
 }
 
-.card__words {
+.card__price {
   font-weight: 300;
 }
