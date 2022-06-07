@@ -83,7 +83,8 @@ body {
 }
 
 .downUp {
-  transform: translate(0rem) !important;
+  transform: translate(0rem) !important ;
+  opacity: 1 !important;
 }
 
 .growUp {
@@ -96,6 +97,23 @@ body {
   }
 
   .panel p:nth-child(3) {
-    transform: translateY(30rem);
+    transform: translateY(20rem);
+    animation-name: hiddenP;
+    animation-timing-function: ease-in-out;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes hiddenP {
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.08;
   }
 }
