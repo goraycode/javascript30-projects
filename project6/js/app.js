@@ -20,7 +20,6 @@ function searchFood(e) {
 }
 
 function filterFoods(result, foodSearch) {
-
     const results = document.querySelector('.results');
 
     if (!foodSearch.length) return;
