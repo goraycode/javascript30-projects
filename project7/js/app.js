@@ -21,3 +21,9 @@ const nineteen = people.some(p => {
 
 console.log(nineteen);
 
+//Array every //is everyone 19?
+const allNineteen = people.every(p => {
+    if (2022 - p.year > 19) return p;
+})
+
+console.log(allNineteen);
