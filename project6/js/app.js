@@ -27,7 +27,7 @@ function filterFoods(result, foodSearch) {
 
     cleanHTML();
 
-    const filterFood = result.filter(food => food.name.toLowerCase().includes(`${foodSearch}`));
+    const filterFood = result.filter(food => food.name.includes(`${foodSearch}`) || food.name.toLowerCase().includes(`${foodSearch}`) || food.name.toUpperCase().includes(`${foodSearch}`));
     filterFood.forEach(food => {
 
         //destructuring
@@ -43,7 +43,7 @@ function filterFoods(result, foodSearch) {
 
         const cardPrice = document.createElement('card__price');
         cardPrice.className = 'card__price';
-        cardPrice.textContent = price;
+        cardPrice.textContent = `Price: $${price}`;
 
         card.appendChild(cardTitle);
         card.appendChild(cardPrice);

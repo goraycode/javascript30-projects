@@ -13,5 +13,15 @@
     "id": 3,
     "name": "Pachamanca",
     "price": 12
+  },
+  {
+    "id": 4,
+    "name": "Arroz con pato",
+    "price": 12
+  },
+  {
+    "id": 5,
+    "name": "Arroz con pollo",
+    "price": 8
   }
 ]

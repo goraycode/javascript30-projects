@@ -26,13 +26,15 @@ body {
 .field,
 .results {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 3rem;
 }
 
-label{
+
+label {
   font-weight: 700;
   font-size: 1.3rem;
 }
