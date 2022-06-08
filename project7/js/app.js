@@ -15,16 +15,11 @@ const comments = [
 
 //Some and every checks
 //Array some //is at least one person 19?
-const nineteen = people.some(p => {
-    if (2022 - p.year >= 19) return p;
-})
-
+const nineteen = people.some(p => (new Date).getFullYear() - p.year >= 19)
 console.log(nineteen);
 
 //Array every //is everyone 19?
-const allNineteen = people.every(p => {
-    if (2022 - p.year >= 19) return p;
-})
+const allNineteen = people.every(p => (new Date).getFullYear() - p.year >= 19)
 
 console.log(allNineteen);
 
