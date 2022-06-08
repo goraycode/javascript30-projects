@@ -33,3 +33,15 @@ console.log(allNineteen);
 //find the comment with the id of 823423
 const findComment = comments.find(comment => comment.id === 823423);
 console.log(findComment);
+
+
+//Array findIndex
+//Find the comment with this ID
+//Delete the comment with the ID of 823423
+const deleteComment = comments.findIndex(comment => comment.id === 823423);
+
+console.log(deleteComment);
+
+//delete that comment
+comments.splice(deleteComment, 1);
+console.log(comments);
