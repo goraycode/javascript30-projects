@@ -24,7 +24,7 @@ const allNineteen = people.every(p => (new Date).getFullYear() - p.year >= 19)
 console.log(allNineteen);
 
 //Array find
-//Find is like filter, buit instead returns just the one you are looking for
+//Find is like filter, but instead returns just the one you are looking for
 //find the comment with the id of 823423
 const findComment = comments.find(comment => comment.id === 823423);
 console.log(findComment);
