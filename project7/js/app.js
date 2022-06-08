@@ -16,7 +16,7 @@ const comments = [
 //Some and every checks
 //Array some //is at least one person 19?
 const nineteen = people.some(p => {
-    if (2022 - p.year === 19) return p;
+    if (2022 - p.year >= 19) return p;
 })
 
 console.log(nineteen);
