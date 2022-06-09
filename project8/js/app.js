@@ -1,6 +1,6 @@
 const colorInput = document.querySelector('#color');
 const rangeInput = document.querySelector('#range');
-const checkInput = document.querySelector('#check.checked');
+
 
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
@@ -32,10 +32,9 @@ let lastY = 0;
 let hue = 0;
 
 
+
 function draw(e) {
     if (!isDrawing) return; //stop the fn from running when they are not moused down
-
-    //ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 
     ctx.beginPath();
     //start from
@@ -47,12 +46,6 @@ function draw(e) {
 
     //change the position of pencil
     [lastX, lastY] = [e.offsetX, e.offsetY];
-
-    //change of color
-    hue++;
-    if (hue >= 360) {
-        hue = 0;
-    }
 
 }
 
