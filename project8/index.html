@@ -21,7 +21,23 @@
     />
   </head>
   <body>
-    <canvas id="draw" width="800" height="800"></canvas>
+    <main class="container">
+      <section class="inputs">
+          <div class="fild">
+              <label for="color">Color: </label>
+              <input type="color" name="color" id="color">
+          </div>
+          <div class="field">
+              <label for="line">Line Width</label>
+              <input type="range" name="range" id="range" min="10" max="100">
+          </div>
+          <div class="field">
+              <label for="check">Default</label>
+              <input type="checkbox" name="check" id="check" checked>
+          </div>
+      </section>
+      <canvas class="whiteBoard" id="draw"></canvas>
+    </main>
 
     <script src="js/app.js"></script>
   </body>

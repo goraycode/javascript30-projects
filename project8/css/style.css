@@ -16,8 +16,35 @@ body {
   font-family: var(--typeLyrics);
 }
 
+
 .container {
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.whiteBoard {
+  border: 1px solid black;
+}
+
+.inputs {  
+  padding: 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inputs {
+    flex-direction: row;
+  }
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
