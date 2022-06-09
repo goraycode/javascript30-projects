@@ -21,3 +21,21 @@ console.warn('Oh no!');
 
 //error
 console.error('Impossible');
+
+//info
+console.info('this is important');
+
+//Testing
+//if the first expretion is wrong show  the message, if its correct it doesn't
+console.assert(1 === 2, 'That is wrong!');
+
+//clearing
+console.clear();
+
+//Viewing DOM Elements
+const p = document.querySelector('.makeGreen');
+console.log(p);
+//to see the propierties
+console.dir(p);
+
+
