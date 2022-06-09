@@ -1,5 +1,7 @@
 const colorInput = document.querySelector('#color');
 const rangeInput = document.querySelector('#range');
+const checkInput = document.querySelector('#check');
+
 
 
 const canvas = document.querySelector('#draw');
@@ -23,14 +25,28 @@ rangeInput.addEventListener('change', (e) => {
     const valueRange = e.target.value;
     ctx.lineWidth = valueRange;
 
+});
+
+checkInput.addEventListener('change', () => {
+    const valueBox = checkInput.checked;
+    console.log(valueBox);
+
+    if (valueBox) {
+        colorInput.disabled = true;
+        colorInput.classList.add('disabled');
+        ctx.strokeStyle = '#ffff';
+    } else {
+        ctx.strokeStyle = `${colorInput.value}`;
+        colorInput.disabled = false;
+        colorInput.classList.remove('disabled');
+    }
+
 })
 
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
-let hue = 0;
-
 
 
 function draw(e) {
@@ -46,7 +62,6 @@ function draw(e) {
 
     //change the position of pencil
     [lastX, lastY] = [e.offsetX, e.offsetY];
-
 }
 
 canvas.addEventListener('mousemove', draw);
