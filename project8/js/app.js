@@ -2,8 +2,6 @@ const colorInput = document.querySelector('#color');
 const rangeInput = document.querySelector('#range');
 const checkInput = document.querySelector('#check');
 
-
-
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
 
