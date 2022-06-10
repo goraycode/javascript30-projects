@@ -14,11 +14,39 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  background-color: coral;
 }
-
 
 .container {
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.inbox {
+  background-color: white;
+  width: 50%;
+  margin: 5rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.inbox::before {
+  content: "";
+  background-color: gray;
+  height: 100%;
+  width: 0.05rem;
+  display: block;
+  position: absolute;
+  left: 2.4rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem 0 1rem;
+  border-bottom: 1px solid gray;
 }
