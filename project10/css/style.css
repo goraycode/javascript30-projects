@@ -58,3 +58,6 @@ input[type="checkbox"] {
 .trash {
   text-decoration: line-through;
 }
+.checked{
+  background-color: rgba(0, 0, 0, 0.2);
+}
