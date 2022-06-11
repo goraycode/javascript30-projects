@@ -24,4 +24,37 @@ body {
 video {
   max-width: 100%;
   display: block;
+  object-fit: cover;
+  margin: 0;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+.player__controls {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1rem);
+  transform: translateY(4rem);
+  padding: 0 1rem 1rem;
+  opacity: 0;
+  transition: transform 2s ease;
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.progress__filled {
+  background-color: orange;
+  height: 0.5rem;
+  width: 100%;
+  margin: 0.5rem 0;
 }
