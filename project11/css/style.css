@@ -52,9 +52,15 @@ video {
   opacity: 1;
 }
 
+.progress{
+  margin-bottom: 1rem;
+  background-color: black;
+
+}
+
 .progress__filled {
   background-color: orange;
   height: 0.5rem;
-  width: 100%;
   margin: 0.5rem 0;
 }
+
