@@ -1,13 +1,64 @@
+//variables
 const playerVideo = document.querySelector('.viewer');
 const btnPlay = document.querySelector('.play');
 const volume = document.querySelector('#volume');
+const backRate = document.querySelector('#backRate');
+const skipButtons = document.querySelectorAll('[data-skip]');
 
-let counter = 0;
+
+//functions
+function togglePlay() {
+    const method = playerVideo.paused ? 'play' : 'pause';
+    playerVideo[method]();
+
+
+    /* 
+     another method
+    if (playerVideo.paused) {
+        playerVideo.play();
+    } else {
+        playerVideo.pause();
+    } */
+}
+
+function changeVolume(e) {
+    const valueVol = e.target.value;
+    playerVideo.volume = valueVol;
+}
+
+function updateButton() {
+    const valueCurr = this.paused; //true
+    const icon = valueCurr ? '⏸' : '▶';
+    btnPlay.textContent = icon;
+}
+
+function skip() {
+    console.log(this.dataset.skip);
+    playerVideo.currentTime += parseFloat(this.dataset.skip);
+}
+
+function changeRate() {
+    playerVideo.playbackRate = this.value;
+}
+
+//hook up the event listeners
+playerVideo.addEventListener('click', togglePlay);
+playerVideo.addEventListener('play', updateButton);
+playerVideo.addEventListener('pause', updateButton);
+
+
 btnPlay.addEventListener('click', () => {
-    playerVideo.play();
+    togglePlay();
 })
 
 volume.addEventListener('change', (e) => {
-    const valueVol = e.target.value;
-    playerVideo.volume = valueVol;
-})
+    changeVolume(e);
+});
+
+backRate.addEventListener('change', changeRate)
+
+
+skipButtons.forEach(skipBtn => {
+    skipBtn.addEventListener('click', skip);
+});
+
