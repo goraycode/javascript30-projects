@@ -1,4 +1,4 @@
-
+const h1 = document.querySelector('h1');
 let pressed = [];
 let wordSecret = 'hi'
 window.addEventListener('keyup', (e) => {
@@ -8,6 +8,6 @@ window.addEventListener('keyup', (e) => {
     pressed.splice(-wordSecret.length - 1, pressed.length - wordSecret.length);
     console.log(pressed);
     if (pressed.join('').includes(wordSecret)) {
-        console.log('ding ding!');
+        h1.textContent = `Ding ding! => word secret was '${wordSecret}'`
     }
 });
