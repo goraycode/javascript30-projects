@@ -77,7 +77,6 @@ img {
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite;
   animation-direction: normal;
 }
 
@@ -86,7 +85,6 @@ img {
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite;
   animation-direction: normal;
 }
 
