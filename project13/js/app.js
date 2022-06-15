@@ -4,21 +4,25 @@ window.addEventListener('scroll', () => {
     console.log(scrollPX);
     const cardImgs = document.querySelectorAll('.card__img');
 
-    if (scrollPX <= 300) {
+    if (scrollPX >= 200) {
 
         cardImgs[0].classList.add('animationImg');
     } else {
         cardImgs[0].classList.remove('animationImg');
     }
 
-    /*  const cardImgs = document.querySelectorAll('.card__img');
- 
-     cardImgs.forEach(img => {
-         const ubicacionImg = img.getBoundingClientRect();
-         console.log(ubicacionImg);
-     }); */
+    if (scrollPX >= 800) {
 
+        cardImgs[1].classList.add('animationImgL');
+    } else {
+        cardImgs[1].classList.remove('animationImgL');
+    }
 
+    if (scrollPX >= 1600) {
 
+        cardImgs[2].classList.add('animationImg');
+    } else {
+        cardImgs[2].classList.remove('animationImg');
+    }
 
 })
