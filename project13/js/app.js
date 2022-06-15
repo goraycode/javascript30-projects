@@ -1,5 +1,4 @@
 const cardImgs = document.querySelectorAll('.card__img');
-
 window.addEventListener('scroll', effectImgs);
 
 function effectImgs() {
@@ -28,8 +27,5 @@ function effectImgs() {
                 img.classList.remove('animationImgL');
             }
         }
-
-
-
     })
 }
