@@ -12,3 +12,38 @@ console.log(myname, secondName);
 
 myname = 'Jofre'
 console.log(myname, secondName);
+
+
+let fruits = ['apple', 'strawberry', 'pineaple', 'pear', 'peach'];
+let otherFruits = fruits;
+fruits[1] = 'cherry';
+
+//otherFruits same to fruits, reference
+
+//with copy
+let moreFruits = [...fruits];
+fruits[2] = 'watermelon';
+console.log(fruits, moreFruits);
+
+
+let person = {
+    username: 'Gerson',
+    age: 21,
+    proffesion: 'Engineer',
+    socialmedia: {
+        twitter: '@Goraycode',
+        instagram: 'Goraycode'
+    }
+}
+
+//with reference => update the original object
+let newPerson = person;
+newPerson.username = 'Jofre';
+console.log(newPerson);
+
+
+//with copy not update the original object
+let otherPerson = {...person} || Object.assign({}, person);
+otherPerson.proffesion = 'Software engineer';
+otherPerson.socialmedia.instagram = 'Gerson Aguedo Yanac';
+console.log(otherPerson);
