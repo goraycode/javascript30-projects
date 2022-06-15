@@ -1,28 +1,35 @@
-window.addEventListener('scroll', () => {
+const cardImgs = document.querySelectorAll('.card__img');
+
+window.addEventListener('scroll', effectImgs);
+
+function effectImgs() {
     //para saber la cantidad de scroll hacia abajo
-    const scrollPX = window.scrollY;
-    console.log(scrollPX);
-    const cardImgs = document.querySelectorAll('.card__img');
+    const scrollPX = window.scrollY + innerHeight;
 
-    if (scrollPX >= 100) {
+    cardImgs.forEach((img, index) => {
 
-        cardImgs[0].classList.add('animationImg');
-    } else {
-        cardImgs[0].classList.remove('animationImg');
-    }
+        const ubication = img.getBoundingClientRect();
 
-    if (scrollPX >= 600) {
+        if (index !== 1) {
 
-        cardImgs[1].classList.add('animationImgL');
-    } else {
-        cardImgs[1].classList.remove('animationImgL');
-    }
+            if (ubication.top < scrollPX) {
+                img.classList.add('animationImg');
+            }
+            if (ubication.top < 0) {
+                img.classList.remove('animationImg');
+            }
+        } else {
 
-    if (scrollPX >= 1200) {
+            if (ubication.top < scrollPX) {
+                img.classList.add('animationImgL');
+            }
 
-        cardImgs[2].classList.add('animationImg');
-    } else {
-        cardImgs[2].classList.remove('animationImg');
-    }
+            if (ubication.top < 0) {
+                img.classList.remove('animationImgL');
+            }
+        }
 
-})
+
+
+    })
+}

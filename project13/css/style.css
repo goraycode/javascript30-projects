@@ -88,9 +88,12 @@ img {
   animation-direction: normal;
 }
 
+.card__img {
+  opacity: 0;
+}
+
 @keyframes transFormR {
   0% {
-    opacity: 0;
     transform: translateX(-50rem);
   }
 
