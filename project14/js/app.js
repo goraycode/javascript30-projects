@@ -20,7 +20,7 @@ fruits[1] = 'cherry';
 
 //otherFruits same to fruits, reference
 
-//with copy
+//with reference
 let moreFruits = [...fruits];
 fruits[2] = 'watermelon';
 console.log(fruits, moreFruits);
@@ -36,13 +36,13 @@ let person = {
     }
 }
 
-//with reference => update the original object
+//with copy => update the original object
 let newPerson = person;
 newPerson.username = 'Jofre';
 console.log(newPerson);
 
 
-//with copy not update the original object
+//with reference not update the original object
 let otherPerson = {...person} || Object.assign({}, person);
 otherPerson.proffesion = 'Software engineer';
 otherPerson.socialmedia.instagram = 'Gerson Aguedo Yanac';
