@@ -4,21 +4,21 @@ window.addEventListener('scroll', () => {
     console.log(scrollPX);
     const cardImgs = document.querySelectorAll('.card__img');
 
-    if (scrollPX >= 200) {
+    if (scrollPX >= 100) {
 
         cardImgs[0].classList.add('animationImg');
     } else {
         cardImgs[0].classList.remove('animationImg');
     }
 
-    if (scrollPX >= 800) {
+    if (scrollPX >= 600) {
 
         cardImgs[1].classList.add('animationImgL');
     } else {
         cardImgs[1].classList.remove('animationImgL');
     }
 
-    if (scrollPX >= 1600) {
+    if (scrollPX >= 1200) {
 
         cardImgs[2].classList.add('animationImg');
     } else {
