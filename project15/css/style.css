@@ -21,3 +21,48 @@ body {
   max-width: 90%;
   margin: 0 auto;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.cards {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.card {
+  padding: 0 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid black;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 0.5rem 1rem;
+}
+
+input[type="submit"] {
+  background-color: blanchedalmond;
+  border: 1px solid blanchedalmond;
+}
+
+input[type="text"] {
+  border: 1px solid blanchedalmond;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
