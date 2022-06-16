@@ -50,8 +50,14 @@ img {
 }
 
 input[type="text"],
-input[type="submit"] {
+input[type="submit"],
+input[type="number"] {
   padding: 0.5rem 1rem;
+}
+
+input[type="number"] {
+  width: 5rem;
+  border: 1px solid blanchedalmond;
 }
 
 input[type="submit"] {
@@ -63,6 +69,34 @@ input[type="text"] {
   border: 1px solid blanchedalmond;
 }
 
-input[type="text"]:focus {
-  outline: none;
+
+.adds {
+  margin: 1rem 0;
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.message {
+  background-color: greenyellow;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.divCard {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divCard p {
+  padding: 0;
+  margin: 0;
 }
