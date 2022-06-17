@@ -2,13 +2,15 @@ const cards = document.querySelectorAll('.card');
 const form = document.querySelector('.form');
 const fieldItem = document.querySelector('#item');
 const fieldImg = document.querySelector('#img');
+const fieldAmount = document.querySelector('#amount');
+
 const adds = document.querySelector('.adds');
 adds.style.display = 'none';
 
 let objectFood = {
     img: '',
     food: '',
-    amount: 0
+    amount: 1
 }
 
 let foods = [];
@@ -19,14 +21,20 @@ cards.forEach(card => {
 
 function addItem(e) {
     const food = e.target.children[1].textContent;
-    const img = e.target.children[0].src;
+    const img = e.target.children[0].currentSrc;
 
     fieldItem.value = food;
     fieldImg.value = img;
 }
 
 function eventListeners() {
-    form.addEventListener('submit', saveFood)
+    form.addEventListener('submit', saveFood);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        foods = JSON.parse(localStorage.getItem('foods')) || [];
+        createCard(foods);
+    })
+
 }
 
 function showMessage(message) {
@@ -48,20 +56,38 @@ function showMessage(message) {
 function saveFood(e) {
     e.preventDefault();
 
-    if (fieldItem.value) {
+    if (fieldItem.value !== '' && fieldAmount.value !== '') {
         showMessage('Success');
 
         objectFood = {
             img: fieldImg.value,
             food: fieldItem.value,
-            amount: 1,
+            amount: Number(fieldAmount.value),
         }
 
 
         //add all foods
-        foods = [...foods, objectFood];
 
-        createCard(fieldItem.value, fieldImg.value);
+        //filter the sames
+        const foodSame = foods.some(card => card.food === fieldItem.value);
+
+        if (foodSame) {
+            const otherFoods = foods.map(card => {
+                if (card.food === objectFood.food) {
+                    card.amount++;
+                    return card
+                } else {
+                    return card
+                }
+            });
+
+
+            foods = [...otherFoods]
+        } else {
+            foods = [...foods, objectFood];
+        }
+
+        createCard(foods);
 
     }
 
@@ -69,27 +95,43 @@ function saveFood(e) {
 
 }
 
+function cleanHtml() {
+    while (adds.firstChild) {
+        adds.removeChild(adds.firstChild);
+    }
+}
 
-function createCard(food, img) {
+
+function createCard(foods) {
+
     adds.style.display = 'flex';
+    cleanHtml();
+    foods.forEach(element => {
 
-    const divCard = document.createElement('div');
-    divCard.classList.add('divCard');
+        const { amount, food, img } = element;
+        const divCard = document.createElement('div');
+        divCard.classList.add('divCard');
 
-    const imgCard = document.createElement('img');
-    imgCard.src = img;
+        const imgCard = document.createElement('img');
+        imgCard.src = img;
 
-    const foodCard = document.createElement('p');
-    foodCard.textContent = food;
+        const foodCard = document.createElement('p');
+        foodCard.textContent = food;
 
-    const amountCard = document.createElement('p');
-    amountCard.textContent = 1;
+        const amountCard = document.createElement('p');
+        amountCard.textContent = amount;
 
-    divCard.appendChild(imgCard);
-    divCard.appendChild(foodCard);
-    divCard.appendChild(amountCard);
+        divCard.appendChild(imgCard);
+        divCard.appendChild(foodCard);
+        divCard.appendChild(amountCard);
+        adds.appendChild(divCard);
+    });
 
-    adds.appendChild(divCard);
+    sincronitationStorage(foods);
+}
+
+function sincronitationStorage() {
+    localStorage.setItem('foods', JSON.stringify(foods));
 }
 
 
