@@ -14,8 +14,6 @@ const sortedBands = bands.sort(function (lastOne, nextOne) {
 
 console.table(sortedBands);
 
-
-
 function addHTML(data) {
     const results = document.querySelector('.results');
 
