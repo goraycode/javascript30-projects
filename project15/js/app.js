@@ -131,10 +131,10 @@ function cleanHtml() {
 function createCard(foods) {
 
     cleanHtml();
-    if (foods.length === 0) {
-        adds.style.display = 'none';
-    } else {
+    if (foods.length) {
         adds.style.display = 'flex';
+    } else {
+        adds.style.display = 'none';
     }
 
     foods.forEach(element => {
