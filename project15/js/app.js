@@ -4,8 +4,13 @@ const fieldItem = document.querySelector('#item');
 const fieldImg = document.querySelector('#img');
 const fieldAmount = document.querySelector('#amount');
 
+let foodAvilables = []
+cards.forEach(food => {
+
+    foodAvilables = [...foodAvilables, food.children[1].textContent];
+});
+
 const adds = document.querySelector('.adds');
-adds.style.display = 'none';
 
 let objectFood = {
     img: '',
@@ -56,42 +61,63 @@ function showMessage(message) {
 function saveFood(e) {
     e.preventDefault();
 
-    if (fieldItem.value !== '' && fieldAmount.value !== '') {
-        showMessage('Success');
-
-        objectFood = {
-            img: fieldImg.value,
-            food: fieldItem.value,
-            amount: Number(fieldAmount.value),
+    let bool = false;
+    for (let i = 0; i < foodAvilables.length; i++) {
+        if (fieldItem.value === foodAvilables[i]) {
+            bool = true;
         }
-
-
-        //add all foods
-
-        //filter the sames
-        const foodSame = foods.some(card => card.food === fieldItem.value);
-
-        if (foodSame) {
-            const otherFoods = foods.map(card => {
-                if (card.food === objectFood.food) {
-                    card.amount++;
-                    return card
-                } else {
-                    return card
-                }
-            });
-
-
-            foods = [...otherFoods]
-        } else {
-            foods = [...foods, objectFood];
-        }
-
-        createCard(foods);
 
     }
 
-    form.reset();
+    if (bool) {
+        if (fieldItem.value !== '' && fieldAmount.value !== '') {
+            showMessage('Success');
+
+            objectFood = {
+                img: fieldImg.value,
+                food: fieldItem.value,
+                amount: Number(fieldAmount.value),
+            }
+
+
+            //add all foods
+
+            //filter the sames
+            const foodSame = foods.some(card => card.food === fieldItem.value);
+
+            if (foodSame) {
+                const otherFoods = foods.map(card => {
+                    if (card.food === objectFood.food) {
+
+                        if (Number(fieldAmount.value) !== 1) {
+                            card.amount = fieldAmount.value
+                        } else {
+
+                            card.amount++;
+                        }
+
+                        return card
+                    } else {
+                        return card
+                    }
+                });
+
+
+                foods = [...otherFoods]
+            } else {
+                foods = [...foods, objectFood];
+            }
+
+            createCard(foods);
+
+        }
+
+        form.reset();
+    }else{
+        showMessage('not available');
+    }
+
+
 
 }
 
@@ -104,8 +130,13 @@ function cleanHtml() {
 
 function createCard(foods) {
 
-    adds.style.display = 'flex';
     cleanHtml();
+    if (foods.length === 0) {
+        adds.style.display = 'none';
+    } else {
+        adds.style.display = 'flex';
+    }
+
     foods.forEach(element => {
 
         const { amount, food, img } = element;
