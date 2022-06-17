@@ -9,8 +9,8 @@ const sortedBands = bands.sort(function (lastOne, nextOne) {
     const [aWord] = lastOne.split(' ');
     const [bWord] = nextOne.split(' ');
 
-    return aWord > bWord ? -1 : 1;
-}).reverse();
+    return aWord > bWord ? 1 : -1;
+});
 
 console.table(sortedBands);
 
