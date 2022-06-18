@@ -21,3 +21,96 @@ body {
   max-width: 90%;
   margin: 0 auto;
 }
+
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    flex-direction: row;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+@media (min-width: 765px) {
+  .controls {
+    flex-wrap: nowrap;
+  }
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photos__btn {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: rgba(24, 198, 193, 0.595);
+  border: 1px solid rgba(24, 198, 193, 0.595);
+  color: black;
+  cursor: pointer;
+}
+
+.photos__btn:hover {
+  background-color: rgba(24, 198, 193, 0.3);
+}
+
+.canvas {
+  margin: 3rem 0;
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas .photo {
+  display: block;
+  border: 1px solid blue;
+  width: 100%;
+  height: 5rem;
+}
+
+.player {
+  border: 1px solid green;
+  width: 100%;
+  height: 5rem;
+}
+
+.strip {
+  border: 1px solid black;
+  width: 100%;
+  height: 5rem;
+}
