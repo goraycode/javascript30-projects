@@ -7,8 +7,6 @@ const snap = document.querySelector('.snap');
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(localMediaStream => {
-
-            console.log(localMediaStream);
             video.srcObject = localMediaStream;
             video.play();
 
@@ -29,8 +27,20 @@ function paintToCanvas() {
 
 }
 
+function takePhoto() {
+    //player the sound
+    snap.currentTime = 0;
+    snap.play();
 
+    //take the data out of the canvas
+    const data = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = data;
+    link.setAttribute('download', 'handsome')
+    link.innerHTML = `<img src="${data}" alt="Taked photo">`;
+    strip.insertBefore(link, strip.firstChild);
+}
 
 
 getVideo();
-paintToCanvas();
+video.addEventListener('canplay', paintToCanvas);

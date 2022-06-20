@@ -97,15 +97,5 @@ h1 {
 }
 
 .canvas .photo {
-  display: block;
-  border: 1px solid blue;
-  width: 100%;
-  height: 5rem;
-}
-
-
-.strip {
-  border: 1px solid black;
-  width: 100%;
-  height: 5rem;
+  display: none;
 }
