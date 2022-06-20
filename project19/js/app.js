@@ -36,7 +36,7 @@ function takePhoto() {
     const data = canvas.toDataURL('image/jpeg');
     const link = document.createElement('a');
     link.href = data;
-    link.setAttribute('download', 'handsome')
+    link.setAttribute('download', 'img')
     link.innerHTML = `<img src="${data}" alt="Taked photo">`;
     strip.insertBefore(link, strip.firstChild);
 }
