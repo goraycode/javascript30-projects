@@ -96,7 +96,7 @@ h1 {
   flex-direction: column;
 }
 
-.canvas .photo {
+.player {
   display: none;
 }
 
