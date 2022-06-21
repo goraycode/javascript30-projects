@@ -140,3 +140,25 @@ a:hover::before {
   align-items: center;
   gap: 2rem;
 }
+
+.ghost input {
+  position: relative;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(1);
+}
+
+.ghost input::after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/ghost.png");
+  width: 2rem;
+  height: 2rem;
+}
+
+.active {
+  filter: grayscale(0) !important;
+}

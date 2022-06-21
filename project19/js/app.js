@@ -3,6 +3,7 @@ const canvas = document.querySelector('.photo');
 const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
+const ghost = document.querySelector('#ghost');
 
 
 
@@ -29,12 +30,24 @@ function paintToCanvas() {
         //mess with them
         pixels = redEffect(pixels);
         pixels = greenEffect(pixels);
-        pixels = blueEffect(pixels); 
+        pixels = blueEffect(pixels);
 
 
         //pixels = rgbSplit(pixels);
 
-        ctx.globalAlpha = 0.1;
+        //active ghost
+        ghost.addEventListener('click', () => {
+            
+            if (ghost.checked) {
+                ghost.classList.add('active');
+                ctx.globalAlpha = 0.1;
+            } else {
+                ghost.classList.remove('active');
+                ctx.globalAlpha = 1;
+            }
+        });
+
+
 
         //pixels = greenScreen(pixels);
 
