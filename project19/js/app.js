@@ -4,6 +4,8 @@ const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
+
+
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(localMediaStream => {
@@ -25,13 +27,16 @@ function paintToCanvas() {
         let pixels = ctx.getImageData(0, 0, width, height);
 
         //mess with them
-        //pixels = redEffect(pixels);
+        pixels = redEffect(pixels);
+        pixels = greenEffect(pixels);
+        pixels = blueEffect(pixels); 
 
-        /*     pixels = rgbSplit(pixels);
-    
-            ctx.globalAlpha = 1; */
 
-        pixels = greenScreen(pixels);
+        //pixels = rgbSplit(pixels);
+
+        ctx.globalAlpha = 0.1;
+
+        //pixels = greenScreen(pixels);
 
         //put them back
         ctx.putImageData(pixels, 0, 0);
@@ -57,21 +62,46 @@ function takePhoto() {
 
 
 function redEffect(pixels) {
+    const rangeRed = document.querySelector('#rmax');
+    const valueRed = Number(rangeRed.value) * 10;
     for (let i = 0; i < pixels.data.length; i += 4) {
 
-        pixels.data[i + 0] = pixels.data[i + 0] + 50 //red
-        pixels.data[i + 1] = pixels.data[i + 1] - 50//green
-        pixels.data[i + 2] = pixels.data[i + 2] * 0.5//blue
+        pixels.data[i + 0] = pixels.data[i + 0] + valueRed //red
+
     }
     return pixels;
 }
 
+function greenEffect(pixels) {
+    const rangeGreen = document.querySelector('#gmax');
+    const valueGreen = Number(rangeGreen.value) * 10;
+    for (let i = 0; i < pixels.data.length; i += 4) {
+        pixels.data[i + 1] = pixels.data[i + 1] + valueGreen //green
+    }
+    return pixels;
+}
+
+function blueEffect(pixels) {
+    const rangeBlue = document.querySelector('#bmax');
+    const valueBlue = Number(rangeBlue.value) * 10;
+
+
+    for (let i = 0; i < pixels.data.length; i += 4) {
+
+        /* pixels.data[i + 0] = pixels.data[i + 0] * 0.5  //red
+        pixels.data[i + 1] = pixels.data[i + 1] - 50 //green */
+        pixels.data[i + 2] = pixels.data[i + 2] + valueBlue;//blue
+    }
+    return pixels;
+}
+
+
 function rgbSplit(pixels) {
     for (let i = 0; i < pixels.data.length; i += 4) {
 
-        pixels.data[i - 150] = pixels.data[i + 0]; //red
-        pixels.data[i + 100] = pixels.data[i + 1];//green
-        pixels.data[i - 550] = pixels.data[i + 2];//blue
+        pixels.data[i - 100] = pixels.data[i + 0]; //red
+        pixels.data[i + 200] = pixels.data[i + 1];//green
+        pixels.data[i - 150] = pixels.data[i + 2];//blue
     }
     return pixels;
 }
@@ -83,7 +113,9 @@ function greenScreen(pixels) {
 
     inputs.forEach(input => {
         levels[input.name] = input.value;
+
     });
+
 
     for (let i = 0; i < pixels.data.length; i += 4) {
 
@@ -104,6 +136,7 @@ function greenScreen(pixels) {
 
 
     }
+
 
     return pixels;
 }

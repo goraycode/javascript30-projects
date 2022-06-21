@@ -29,36 +29,49 @@
         </div>
         <div class="controls">
           <div class="controls__red control">
-            <div class="controls__red-min">
-              <label for="rmin">Red Min:</label>
-              <input type="range" name="rmin" id="rmin" />
-            </div>
             <div class="controls__red-max">
-              <label for="rmax">Red Max:</label>
-              <input type="range" name="rmax" id="rmax" />
+              <label for="rmax">Red</label>
+              <input
+                type="range"
+                name="rmax"
+                id="rmax"
+                value="0"
+                min="0"
+                max="100"
+              />
             </div>
           </div>
           <!-- final controls red -->
           <div class="controls__green control">
-            <div class="controls__green-min">
-              <label for="gmax">Green Min:</label>
-              <input type="range" name="gmin" id="gmin" />
-            </div>
             <div class="controls__green-max">
-              <label for="gmax">Green Max:</label>
-              <input type="range" name="gmax" id="gmax" />
+              <label for="gmax">Green</label>
+              <input
+                type="range"
+                name="gmax"
+                id="gmax"
+                value="0"
+                min="0"
+                max="100"
+              />
             </div>
           </div>
           <!-- final controls green -->
           <div class="controls__blue control">
-            <div class="controls__blue-min">
-              <label for="bmin">Blue Min:</label>
-              <input type="range" name="bmin" id="bmin" />
-            </div>
             <div class="controls__blue-max">
-              <label for="bmax">Blue Max:</label>
-              <input type="range" name="bmax" id="bmax" />
+              <label for="bmax">Blue</label>
+              <input
+                type="range"
+                name="bmax"
+                id="bmax"
+                value="0"
+                min="0"
+                max="100"
+              />
             </div>
+          </div>
+          <div class="control ghost">
+            <img src="img/ghost.png" alt="ghost">
+            <input type="checkbox" name="" id="" />
           </div>
         </div>
       </section>
@@ -67,11 +80,7 @@
         <video class="player"></video>
         <div class="strip"></div>
       </section>
-      <audio
-        class="snap"
-        src="audio/camera.mp3"
-        hidden
-      ></audio>
+      <audio class="snap" src="audio/camera.mp3" hidden></audio>
     </main>
     <script src="js/app.js"></script>
   </body>
