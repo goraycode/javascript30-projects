@@ -10,7 +10,7 @@ function writeWords() {
 
     recognition.start();
     recognition.onstart = function (e) {
-        words.textContent = 'Escuchando...';
+        words.textContent = 'Listening...';
         micro.children[0].src = newImg;
     }
 
@@ -21,8 +21,8 @@ function writeWords() {
 
     recognition.onresult = function (e) {
 
+        console.log(e.results);
         const { confidence, transcript } = e.results[0][0];
-        console.log(confidence, transcript);
         words.textContent = transcript;
     }
 }
