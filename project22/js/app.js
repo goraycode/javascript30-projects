@@ -11,7 +11,6 @@ function highlighLink() {
         left: linkCoords.left + window.scrollX,
     }
 
-    console.log(coords.top);
     highLight.style.width = `${coords.width}px`;
     highLight.style.height = `${coords.height}px`;
     highLight.style.transform = `translate(${coords.left}px , ${coords.top}px)`;
