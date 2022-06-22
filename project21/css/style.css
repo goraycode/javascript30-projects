@@ -16,6 +16,11 @@ body {
   font-family: var(--typeLyrics);
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .container {
   width: 1200px;
   max-width: 90%;
@@ -23,4 +28,22 @@ body {
 }
 h1 {
   text-align: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.data__img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.data__speed {
+  font-weight: 700;
+  font-size: 4rem;
 }
