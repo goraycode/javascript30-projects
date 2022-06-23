@@ -20,7 +20,9 @@ function populateVoices() {
 function setVoice(e) {
     const chooseVoice = e.target.value;
     msg.voice = voices.find(voice => voice.name === chooseVoice);
+
 }
+
 
 function speakNow() {
     const valueText = options[2].value;
@@ -32,7 +34,7 @@ function speakNow() {
 
     msg.text = valueText;
 
-    console.log(msg)
+    console.log(msg);
     speechSynthesis.speak(msg);
 }
 
@@ -59,9 +61,21 @@ function messageError(message) {
 }
 
 function stopNow() {
-    speechSynthesis.pause();
+    speechSynthesis.cancel();
 }
 
+function effectVoice() {
+    const rate = options[0];
+    const pitch = options[1];
+    rate.addEventListener('change', (e) => {
+        msg.rate = Number(e.target.value);
+    });
+    pitch.addEventListener('change', (e) => {
+        msg.pitch = Number(e.target.value);
+    });
+}
+
+effectVoice();
 
 //get differents voices
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
