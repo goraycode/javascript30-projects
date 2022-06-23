@@ -79,3 +79,18 @@ h2 {
   padding: 0.2rem 1rem;
   width: 7.5rem;
 }
+
+.error {
+  background-color: red;
+  color: white;
+  padding: 0.2rem;
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.error p{
+  padding: 0;
+  margin: 0;
+}
