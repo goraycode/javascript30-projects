@@ -33,7 +33,7 @@ function speakNow() {
     msg.text = valueText;
 
     console.log(msg)
-    /* speechSynthesis.speak(msg); */
+    speechSynthesis.speak(msg);
 }
 
 function messageError(message) {
@@ -58,9 +58,14 @@ function messageError(message) {
 
 }
 
+function stopNow() {
+    speechSynthesis.pause();
+}
+
 
 //get differents voices
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 
 voicesDropdown.addEventListener('change', setVoice);
 speakButton.addEventListener('click', speakNow);
+stopButton.addEventListener('click', stopNow);
