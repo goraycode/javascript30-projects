@@ -1,0 +1,96 @@
+:root {
+  --typeLyrics: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--typeLyrics);
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: burlywood;
+}
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.voiceinator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid whitesmoke;
+  padding: 1rem 0;
+}
+
+@media (min-width: 1200px) {
+  .voiceinator {
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.buttons button {
+  background-color: whitesmoke;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.2rem 1rem;
+  width: 7.5rem;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  padding: 0.2rem;
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.error p{
+  padding: 0;
+  margin: 0;
+}
