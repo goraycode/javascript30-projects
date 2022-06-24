@@ -2,7 +2,7 @@ const nav = document.querySelector('.sticky');
 const firstLink = document.querySelector('.first__link');
 
 
-window.addEventListener('scroll', () => {
+function fixNav() {
     const ubication = nav.getBoundingClientRect();
 
     if (ubication.top === 0) {
@@ -10,5 +10,6 @@ window.addEventListener('scroll', () => {
     } else {
         firstLink.classList.remove('show');
     }
+}
 
-})
+window.addEventListener('scroll', fixNav)
