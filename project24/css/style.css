@@ -50,3 +50,30 @@ h2 {
   color: white;
   font-size: 4rem;
 }
+
+.sticky {
+  background-color: black;
+}
+
+.sticky__opt {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (min-width: 765px) {
+  .sticky__opt {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.sticky a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+}
