@@ -97,9 +97,15 @@ h2 {
 a:first-child {
   background-color: white;
   color: black;
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in-out;
 }
 
 a:hover:first-child {
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
+}
+
+.show {
+  transform: translateX(0) !important;
 }
