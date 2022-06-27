@@ -9,7 +9,7 @@ function handleEnter() {
     const navCoords = nav.getBoundingClientRect();
     const coords = {
         top: position.top - navCoords.top + 40,
-        left: position.left + navCoords.left
+        left: position.left - navCoords.left + 100
     }
     console.log(position, coords.left)
     background.style.transform = `translate(${coords.left}px , ${coords.top}px)`;
