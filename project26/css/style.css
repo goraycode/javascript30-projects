@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  background-color: bisque;
 }
 
 img,
@@ -35,4 +36,61 @@ h2 {
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 1rem 0;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+li ul {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  margin: 3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.top > * {
+  flex: 1 0 0;
+}
+
+ul > * {
+  background-color: white;
+  padding: 1rem;
+}
+
+.courses li,
+.links li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.05rem;
+}
+
+a ~ ul {
+  display: none;
+}
+
+.showInfo {
+  display: block !important;
+}
+
+.dropdownBackground {
+  background-color: white;
 }
