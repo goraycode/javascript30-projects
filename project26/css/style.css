@@ -61,6 +61,7 @@ li ul {
 }
 
 .top {
+  position: relative;
   margin: 3rem 0 0;
   display: flex;
   flex-wrap: wrap;
@@ -92,5 +93,12 @@ a ~ ul {
 }
 
 .dropdownBackground {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background-color: white;
+  width: 2rem;
+  height: 2rem;
 }
