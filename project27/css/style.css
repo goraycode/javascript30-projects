@@ -36,3 +36,20 @@ h2 {
   max-width: 90%;
   margin: 0 auto;
 }
+
+.items {
+  margin: 2rem 0;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 10rem;
+}
