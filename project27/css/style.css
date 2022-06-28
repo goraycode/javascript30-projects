@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  overflow: hidden;
 }
 
 img,
@@ -39,21 +40,33 @@ h2 {
 
 .items {
   margin: 2rem 0;
-  padding: 2rem 0;
+  padding: 5rem 0;
   border: 1px solid red;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-x: scroll;
 }
 
 .item {
+  padding: 0;
+  margin: 0;
+  width: 10rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 20rem;
-  height: 20rem;
   font-size: 2rem;
   font-weight: 700;
   border: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.item:nth-child(even) {
+  transform: perspective(50rem) rotate3d(0, 1, 0, 60deg);
+}
+
+.item:nth-child(odd) {
+  transform: perspective(50rem) rotate3d(0, -1, 0, 60deg);
 }
