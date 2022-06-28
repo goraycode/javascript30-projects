@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: var(--typeLyrics);
+  background-color: blueviolet;
   overflow: hidden;
 }
 
@@ -39,14 +40,27 @@ h2 {
 }
 
 .items {
+  width: 100%;
   margin: 2rem 0;
   padding: 5rem 0 5rem 18rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow-x: scroll;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  position: relative;
+}
+
+.active {
+  border: 1px solid gray !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  transform: scale(1);
 }
 
 .item {
