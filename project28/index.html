@@ -23,7 +23,12 @@
   <body>
     <main class="container">
       <h1>Video Speed Controller UI</h1>
-      
+      <div class="panel">
+        <video src="video/video.mp4" class="panel__video" controls></video>
+        <div class="panel__speed">
+          <input type="range" name="speed" id="speed" value="0" step="0.5" />
+        </div>
+      </div>
     </main>
     <script src="js/app.js"></script>
   </body>
