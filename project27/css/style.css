@@ -40,7 +40,7 @@ h2 {
 
 .items {
   margin: 2rem 0;
-  padding: 5rem 0;
+  padding: 5rem 0 5rem 18rem;
   border: 1px solid red;
   display: flex;
   flex-direction: row;
@@ -50,8 +50,6 @@ h2 {
 }
 
 .item {
-  padding: 0;
-  margin: 0;
   width: 10rem;
   height: 20rem;
   display: flex;
