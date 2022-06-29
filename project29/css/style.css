@@ -1,0 +1,40 @@
+:root {
+  --typeLyrics: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--typeLyrics);
+  background-color: black;
+  color: white;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
