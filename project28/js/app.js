@@ -15,7 +15,7 @@ function changeRate() {
     }
     setTimeout(() => {
         text.textContent = '';
-    }, 2000);
+    }, 3000);
 }
 
 
