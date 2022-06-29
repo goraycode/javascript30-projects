@@ -57,9 +57,30 @@ h2 {
   width: 80%;
 }
 
+.panel__speed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (min-width: 765px) {
+  .panel__speed {
+    transform: rotate(270deg);
+  }
+}
+
+.panel__text {
+  position: absolute;
+  left: 0;
+  writing-mode: vertical-lr;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 @media (min-width: 765px) {
   input[type="range"] {
-    transform: rotate(270deg);
+    cursor: grabbing;
   }
 }
 

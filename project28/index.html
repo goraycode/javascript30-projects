@@ -26,7 +26,16 @@
       <div class="panel">
         <video src="video/video.mp4" class="panel__video" controls></video>
         <div class="panel__speed">
-          <input type="range" name="speed" id="speed" value="0" step="0.5" />
+          <input
+            type="range"
+            name="speed"
+            id="speed"
+            value="1"
+            step="0.5"
+            min="0.5"
+            max="4"
+          />
+          <p class="panel__text"></p>
         </div>
       </div>
     </main>
