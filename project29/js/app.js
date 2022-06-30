@@ -59,8 +59,6 @@ function displayEndTime(timestamp) {
 }
 
 
-
-
 //events
 fields.forEach(field => {
     field.addEventListener('click', checkOpt);
