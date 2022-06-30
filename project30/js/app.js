@@ -3,6 +3,7 @@ const holes = document.querySelectorAll('.hole');
 const score = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 let lastHole;
+let sum = 0;
 
 
 function randomTime(min, max) {
@@ -11,7 +12,6 @@ function randomTime(min, max) {
 
 function randomHole(holes) {
     const idx = Math.floor(Math.random() * holes.length);
-    console.log(idx)
     const hole = holes[idx];
     //not same hole
     if (hole === lastHole) {
@@ -44,18 +44,18 @@ function loadPeed() {
     }, time);
 }
 
-function sumScore(sum) {
+function sumScore(e) {
+
+    if (!e.isTrusted) return;
+    sum++;
     score.textContent = sum;
+    this.classList.remove('showmole');
 }
 
 
-let sum = 0;
 //events
 moles.forEach(mole => {
-    mole.addEventListener('click', () => {
-        sum++;
-        sumScore(sum);
-    });
+    mole.addEventListener('click', sumScore);
 });
 
 
