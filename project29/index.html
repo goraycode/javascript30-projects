@@ -26,8 +26,8 @@
       <div class="panel">
         <form action="" class="form">
           <div class="field">
-            <p>20 secs</p>
-            <input type="radio" name="opt" value="2" />
+            <p>1 min</p>
+            <input type="radio" name="opt" value="1" />
           </div>
           <div class="field">
             <p>5 min</p>
@@ -41,17 +41,16 @@
             <p>20 min</p>
             <input type="radio" name="opt" value="20" />
           </div>
-          <div class="field">
-            <input
-              type="text"
-              name="minute"
-              id="minute"
-              placeholder="Enter minutes"
-            />
-          </div>
+          <input
+            type="number"
+            name="minute"
+            id="minute"
+            placeholder="Enter minutes"
+            autocomplete="off"
+          />
         </form>
-        <h2 class="panel__clock">03:20</h2>
-        <p class="panel__text">Be back at 5:00</p>
+        <h2 class="panel__clock">00:00</h2>
+        <p class="panel__text"></p>
       </div>
     </main>
     <script src="js/app.js"></script>
