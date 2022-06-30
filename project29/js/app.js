@@ -13,17 +13,21 @@ function checkOpt() {
     timer(valueClock * 60);
 
 }
-
 function getMinutes() {
     const valueClock = Number(this.value);
     clock.textContent = valueClock;
     timer(valueClock * 60);
 }
 
+
 let countdown;
 function timer(seconds) {
+    //clear any existing timers
+    clearInterval(countdown);
+
     const value = Date.now();
     const then = value + seconds * 1000;
+    displayEndTime(then);
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
 
@@ -43,7 +47,6 @@ function displayTimeLeft(seconds) {
     const minutes = Math.floor(remaindMinutes / 60);
     const remaindSeconds = seconds % 60;
     clock.textContent = `${hours}:${minutes}:${remaindSeconds < 10 ? '0' : ''}${remaindSeconds}`;
-    displayEndTime(seconds);
 
 }
 
@@ -52,7 +55,7 @@ function displayEndTime(timestamp) {
     const end = new Date(timestamp);
     const hour = end.getHours();
     const minutes = end.getMinutes();
-    endTime.textContent = `Be back at ${hour}:${minutes}`;
+    endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`;
 }
 
 
@@ -63,4 +66,4 @@ fields.forEach(field => {
     field.addEventListener('click', checkOpt);
 });
 
-inputMinute.addEventListener('blur', getMinutes);
+inputMinute.addEventListener('keyup', getMinutes);
