@@ -43,13 +43,19 @@ function loadPeed() {
     }, time);
 }
 
-function sumScore() {
-    
+function sumScore(sum) {
+    score.textContent = sum;
 }
 
 
+let sum = 0;
 //events
 document.addEventListener('DOMContentLoaded', loadPeed);
 moles.forEach(mole => {
-    mole.addEventListener('click', sumScore);
+    mole.addEventListener('click', () => {
+        sum++;
+        sumScore(sum);
+    });
 });
+
+
