@@ -10,7 +10,8 @@ function randomTime(min, max) {
 }
 
 function randomHole(holes) {
-    const idx = Math.round(Math.random() * holes.length);
+    const idx = Math.floor(Math.random() * holes.length);
+    console.log(idx)
     const hole = holes[idx];
     //not same hole
     if (hole === lastHole) {
@@ -50,7 +51,6 @@ function sumScore(sum) {
 
 let sum = 0;
 //events
-document.addEventListener('DOMContentLoaded', loadPeed);
 moles.forEach(mole => {
     mole.addEventListener('click', () => {
         sum++;
