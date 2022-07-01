@@ -22,15 +22,20 @@ export function level3() {
 export function winner() {
     Swal.fire({
         title: 'Congratulations, You win!!!',
-        width: 600,
+        width: 400,
         padding: '3em',
-        color: '#716add',
-        background: '#fff url(/images/trees.png)',
+        color: '#211D1E',
+        background: '#fff',
         backdrop: `
           rgba(0,0,123,0.4)
-          url("/images/nyan-cat.gif")
-          left top
+          url(./img/congratulations.gif)
+          center center
           no-repeat
         `
+    }).then((result) => {
+        if (result.isConfirmed) {
+            location.reload();
+        }
     })
 }
+

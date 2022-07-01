@@ -67,11 +67,11 @@ function sumScore(e) {
         clearInterval(upmole);
         sum = 0;
         initLevel();
-    } else if (sum === 3 && currLevel === 2) {
+    } else if (sum === 2 && currLevel === 2) {
         clearInterval(upmole);
         sum = 0;
         initLevel();
-    } else if (sum === 4 && currLevel === 3) {
+    } else if (sum === 2 && currLevel === 3) {
         clearInterval(upmole);
         sum = 0;
         winner();
@@ -83,16 +83,16 @@ function sumLevel() {
     levelGame.textContent = `Level ${currLevel}`;
     switch (currLevel) {
         case 1:
-            loadPeed(2000, 3000);
+            loadPeed(1500, 2500);
             break;
 
         case 2:
             level2();
-            loadPeed(1000, 2000);
+            loadPeed(500, 1500);
             break;
         case 3:
             level3();
-            loadPeed(500, 1000);
+            loadPeed(100, 1000);
             break;
         default:
             break;
