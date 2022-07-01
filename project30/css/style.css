@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: var(--typeLyrics);
-  background-color: gold;
+  background-color: #f9a03f;
 }
 
 img,
@@ -30,6 +30,11 @@ h2 {
   font-weight: 700;
   text-align: center;
   font-size: 3rem;
+}
+
+h5 {
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -126,4 +131,12 @@ h2 {
     transform: scale(1.1);
     border: 1px solid black;
   }
+}
+
+.level2 {
+  background-color: #d45113;
+}
+
+.level3 {
+  background-color: #813405;
 }
