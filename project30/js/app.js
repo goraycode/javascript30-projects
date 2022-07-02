@@ -62,16 +62,16 @@ function sumScore(e) {
 
     score.textContent = sum;
     this.classList.remove('showmole');
-    if (sum === 2 && currLevel === 1) {
+    if (sum === 5 && currLevel === 1) {
 
         clearInterval(upmole);
         sum = 0;
         initLevel();
-    } else if (sum === 2 && currLevel === 2) {
+    } else if (sum === 10 && currLevel === 2) {
         clearInterval(upmole);
         sum = 0;
         initLevel();
-    } else if (sum === 2 && currLevel === 3) {
+    } else if (sum === 20 && currLevel === 3) {
         clearInterval(upmole);
         sum = 0;
         winner();
